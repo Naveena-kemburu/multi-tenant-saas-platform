@@ -4,7 +4,7 @@
 
 A production-ready, enterprise-grade multi-tenant SaaS platform with complete project and task management capabilities. This application demonstrates advanced architectural patterns including data isolation, JWT-based authentication, role-based access control, and Docker containerization.
 
-## 🚀 Quick Start with Docker
+##  Quick Start with Docker
 
 ```bash
 # Clone the repository
@@ -20,7 +20,7 @@ docker-compose up -d
 - **Backend API**: http://localhost:5000
 - **Database**: localhost:5432
 
-## 📚 Documentation
+##  Documentation
 
 - [Research Document](docs/research.md) - Multi-tenancy analysis and technology stack justification
 - [Product Requirements](docs/PRD.md) - User personas and functional/non-functional requirements
@@ -28,7 +28,7 @@ docker-compose up -d
 - [Technical Specification](docs/technical-spec.md) - Setup guide and project structure
 - [API Documentation](docs/API.md) - Complete API endpoint reference
 
-## 🔐 Test Credentials
+## Test Credentials
 
 **Super Admin**
 - Email: `superadmin@system.com`
@@ -43,7 +43,7 @@ docker-compose up -d
 - Email: `user1@demo.com`
 - Password: `User@123`
 
-## ✨ Features
+##  Features
 
 ### Multi-Tenancy
 - Complete data isolation between tenants
@@ -72,7 +72,7 @@ docker-compose up -d
 - Audit logging for compliance
 - Input validation and SQL injection prevention
 
-## 🏗️ Technology Stack
+##  Technology Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -83,7 +83,7 @@ docker-compose up -d
 | Containerization | Docker, Docker Compose |
 | Tools | Postman, Swagger |
 
-## 📊 Database Schema
+##  Database Schema
 
 ### Core Tables
 - **tenants** - Organization information with subscription plans
@@ -123,7 +123,7 @@ docker-compose up -d
 ### Health Check
 - `GET /api/health` - Server health status
 
-## 🐳 Docker Architecture
+##  Docker Architecture
 
 ```
 Docker Network
@@ -134,7 +134,7 @@ Docker Network
 
 All services communicate internally using service names (database, backend, frontend).
 
-## 📋 Subscription Plans
+##  Subscription Plans
 
 | Plan | Max Users | Max Projects | Price |
 |------|-----------|--------------|-------|
@@ -142,7 +142,7 @@ All services communicate internally using service names (database, backend, fron
 | Pro | 25 | 15 | $99/month |
 | Enterprise | 100 | 50 | Custom |
 
-## 🎯 Project Structure
+##  Project Structure
 
 ```
 .
@@ -177,7 +177,7 @@ All services communicate internally using service names (database, backend, fron
 └── README.md                  # This file
 ```
 
-## 🔧 Environment Variables
+##  Environment Variables
 
 Core environment variables (configured automatically in Docker):
 - `DATABASE_URL` - PostgreSQL connection string
@@ -186,7 +186,7 @@ Core environment variables (configured automatically in Docker):
 - `BACKEND_URL` - Backend API URL
 - `FRONTEND_URL` - Frontend URL
 
-## 📝 Development
+##  Development
 
 ### Local Setup
 
@@ -202,7 +202,7 @@ npm install
 npm start
 ```
 
-## ✅ Testing
+##  Testing
 
 ### Health Check
 ```bash
@@ -222,24 +222,12 @@ curl -X POST http://localhost:5000/api/auth/register-tenant \
   }'
 ```
 
-## 🎬 Demo Video
-
-Watch the complete demo video: [YouTube Link]
 
 ## 📄 License
 
 MIT License - See LICENSE file for details
 
-## 👨‍💻 Author
+##  Author
 
-Naveena Kemburu
+Naveena Kemburu 
 
-## 📞 Support
-
-For issues, feature requests, or questions, please open an issue in the GitHub repository.
-
----
-
-**Status**: ✅ Production Ready
-**Last Updated**: December 2025
-**Commits**: 30+
