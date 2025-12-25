@@ -1,23 +1,12 @@
-# Multi-stage build for React frontend
-FROM node:18-alpine AS builder
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci
-
-COPY . .
-RUN npm run build
-
-# Production stage
 FROM node:18-alpine
 
 WORKDIR /app
 
-RUN npm install -g serve
+COPY package*.json ./
+RUN npm install
 
-COPY --from=builder /app/dist ./dist
+COPY . .
 
 EXPOSE 3000
 
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "3000"]
