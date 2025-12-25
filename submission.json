@@ -1,0 +1,156 @@
+{
+  "projectTitle": "Multi-Tenant SaaS Platform with Project & Task Management",
+  "projectDescription": "A production-ready, enterprise-grade multi-tenant SaaS platform demonstrating data isolation, JWT authentication, role-based access control, and Docker containerization.",
+  "gitHubRepository": "https://github.com/Naveena-kemburu/multi-tenant-saas-platform",
+  "videoUrl": "https://youtu.be/demo-video-placeholder",
+  "techStack": {
+    "frontend": "React 18, Axios, React Router, CSS3",
+    "backend": "Express.js, Node.js, JWT, bcrypt",
+    "database": "PostgreSQL 15",
+    "containerization": "Docker, Docker Compose",
+    "tools": "Postman, Swagger, Git"
+  },
+  "testCredentials": {
+    "superAdmin": {
+      "email": "superadmin@system.com",
+      "password": "Admin@123",
+      "role": "super_admin",
+      "description": "System-level administrator with access to all tenants"
+    },
+    "tenantAdmin": {
+      "email": "admin@demo.com",
+      "password": "Demo@123",
+      "role": "tenant_admin",
+      "tenant": "demo",
+      "tenantName": "Demo Company",
+      "description": "Organization administrator for Demo Company"
+    },
+    "tenantUser1": {
+      "email": "user1@demo.com",
+      "password": "User@123",
+      "role": "user",
+      "tenant": "demo",
+      "description": "Regular user in Demo Company"
+    },
+    "tenantUser2": {
+      "email": "user2@demo.com",
+      "password": "User@123",
+      "role": "user",
+      "tenant": "demo",
+      "description": "Another regular user in Demo Company"
+    }
+  },
+  "demoData": {
+    "superAdminUser": {
+      "id": "uuid-1",
+      "email": "superadmin@system.com",
+      "fullName": "Super Administrator",
+      "role": "super_admin",
+      "tenantId": null
+    },
+    "demoTenant": {
+      "id": "uuid-2",
+      "name": "Demo Company",
+      "subdomain": "demo",
+      "status": "active",
+      "subscriptionPlan": "pro",
+      "maxUsers": 25,
+      "maxProjects": 15
+    },
+    "tenantAdminUser": {
+      "id": "uuid-3",
+      "email": "admin@demo.com",
+      "fullName": "Admin User",
+      "role": "tenant_admin",
+      "tenantId": "uuid-2"
+    },
+    "regularUser1": {
+      "id": "uuid-4",
+      "email": "user1@demo.com",
+      "fullName": "User One",
+      "role": "user",
+      "tenantId": "uuid-2"
+    },
+    "regularUser2": {
+      "id": "uuid-5",
+      "email": "user2@demo.com",
+      "fullName": "User Two",
+      "role": "user",
+      "tenantId": "uuid-2"
+    },
+    "projects": [
+      {
+        "id": "project-uuid-1",
+        "tenantId": "uuid-2",
+        "name": "E-Commerce Platform",
+        "description": "Building an online marketplace",
+        "status": "active",
+        "createdBy": "uuid-3"
+      },
+      {
+        "id": "project-uuid-2",
+        "tenantId": "uuid-2",
+        "name": "Mobile App Development",
+        "description": "Cross-platform mobile application",
+        "status": "active",
+        "createdBy": "uuid-3"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-uuid-1",
+        "projectId": "project-uuid-1",
+        "tenantId": "uuid-2",
+        "title": "Design database schema",
+        "status": "completed",
+        "priority": "high",
+        "assignedTo": "uuid-4"
+      },
+      {
+        "id": "task-uuid-2",
+        "projectId": "project-uuid-1",
+        "tenantId": "uuid-2",
+        "title": "Implement payment gateway",
+        "status": "in_progress",
+        "priority": "high",
+        "assignedTo": "uuid-5"
+      },
+      {
+        "id": "task-uuid-3",
+        "projectId": "project-uuid-2",
+        "tenantId": "uuid-2",
+        "title": "Setup development environment",
+        "status": "todo",
+        "priority": "medium",
+        "assignedTo": "uuid-4"
+      }
+    ]
+  },
+  "apiEndpoints": [
+    "POST /api/auth/register-tenant",
+    "POST /api/auth/login",
+    "GET /api/auth/me",
+    "POST /api/auth/logout",
+    "GET /api/tenants/:tenantId",
+    "PUT /api/tenants/:tenantId",
+    "GET /api/tenants",
+    "POST /api/tenants/:tenantId/users",
+    "GET /api/tenants/:tenantId/users",
+    "PUT /api/tenants/:tenantId/users/:userId",
+    "POST /api/tenants/:tenantId/projects",
+    "GET /api/tenants/:tenantId/projects",
+    "PUT /api/projects/:projectId",
+    "POST /api/projects/:projectId/tasks",
+    "GET /api/projects/:projectId/tasks",
+    "PUT /api/tasks/:taskId",
+    "GET /api/health"
+  ],
+  "deploymentNotes": "Application is fully dockerized. Run 'docker-compose up -d' from project root to start all services.",
+  "databaseInfo": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "saas_db",
+    "user": "saas_user",
+    "password": "saas_password_secure"
+  }
+}
