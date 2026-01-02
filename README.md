@@ -141,3 +141,7 @@ The application requires the following variables. See `.env.example` in the back
 * Email: `admin@demo.com`
 * Password: `Admin@123`
 * Subdomain: `demo`
+
+
+## Live video demo google drive link
+https://drive.google.com/file/d/1BmiD2RreA2secip4DIYGKdTY777f-CxC/view?usp=sharing
